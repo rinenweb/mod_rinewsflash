@@ -26,6 +26,10 @@
             <fieldset name="basic">
                 <field name="article_id" type="text" default="" label="MOD_RINEWSFLASH_ARTICLE_ID" description="MOD_RINEWSFLASH_ARTICLE_ID_DESC" />
                 <field name="number_of_additions" type="number" default="5" label="MOD_RINEWSFLASH_NUMBER_OF_ADDITIONS" description="MOD_RINEWSFLASH_NUMBER_OF_ADDITIONS_DESC" min="1" step="1" />
+				<field name="order" type="list" default="desc" label="MOD_RINEWSFLASH_ORDER_LABEL" description="MOD_RINEWSFLASH_ORDER_LABEL_DESC">
+				<option value="desc">MOD_RINEWSFLASH_ORDER_DESCENDING</option>
+				<option value="asc">MOD_RINEWSFLASH_ORDER_ASCENDING</option>
+				</field>
                 <field name="show_link" type="radio" default="0" label="MOD_RINEWSFLASH_SHOW_LINK" description="MOD_RINEWSFLASH_SHOW_LINK_DESC" class="btn-group btn-group-yesno">
                 <option value="0">JNO</option>
                 <option value="1">JYES</option>

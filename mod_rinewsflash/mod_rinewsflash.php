@@ -9,18 +9,17 @@
 // No direct access to this file
 defined('_JEXEC') or die;
 
-// Load the helper file
 require_once __DIR__ . '/helper.php';
 
 $articleId = $params->get('article_id');
 $numberOfAdditions = $params->get('number_of_additions');
-// Retrieve additional module parameters
+$order = $params->get('order', 'desc');
 $showLink = $params->get('show_link', 0);
 $linkClass = $params->get('link_class', 'btn');
 $linkText = $params->get('link_text', 'More updates');
 
 
-$list = ModLatestAdditionsHelper::getLatestAdditions($articleId, $numberOfAdditions);
+$list = ModLatestAdditionsHelper::getLatestAdditions($articleId, $numberOfAdditions, $order);
 
 require JModuleHelper::getLayoutPath('mod_rinewsflash');
 

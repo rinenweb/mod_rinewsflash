@@ -15,7 +15,7 @@ use Joomla\Registry\Registry;
 
 class ModLatestAdditionsHelper
 {
-    public static function getLatestAdditions($articleId, $numberOfAdditions)
+    public static function getLatestAdditions($articleId, $numberOfAdditions, $order)
     {
         $db = Factory::getDbo();
         $query = $db->getQuery(true);
@@ -50,12 +50,15 @@ class ModLatestAdditionsHelper
         $processedContent = $article->text;
 
         // Split the processed content by <hr /> to get individual additions
-        $additions = explode('<hr>', $processedContent);
+        $additions = explode('<hr />', $processedContent);
 
-        // Reverse the array to start with the latest additions and slice it to get the specified number of additions
-        $latestAdditions = array_slice(array_reverse($additions), 0, $numberOfAdditions);
+        if ($order == 'desc') {
+        // Reverse the array to start with the latest additions
+        $additions = array_reverse($additions);
+    }
+    // Slice the array to get the specified number of additions
+    $latestAdditions = array_slice($additions, 0, $numberOfAdditions);
 
-        // Return the latest additions
-        return $latestAdditions;
+    return $latestAdditions;
     }
 }
