@@ -17,7 +17,7 @@ $articleUrl = Route::_('index.php?option=com_content&view=article&id=' . $articl
 ?>
 <div class="latest-additions">
     <?php foreach ($list as $item): ?>
-        <div><?php echo htmlspecialchars($item, ENT_QUOTES, 'UTF-8'); ?></div>
+        <div><?php echo $item; ?></div>
         <?php if (next($list)): // Check if there is another item in the array ?>
             <hr />
         <?php endif; ?>
