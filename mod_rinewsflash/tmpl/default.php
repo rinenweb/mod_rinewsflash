@@ -24,9 +24,9 @@ $articleUrl = Route::_('index.php?option=com_content&view=article&id=' . $articl
     <?php endforeach; ?>
 
     <?php if ($showLink == 1): ?>
-        <a href="<?php echo $articleUrl; ?>" class="<?php echo htmlspecialchars($linkClass, ENT_QUOTES, 'UTF-8'); ?>">
+        <p style="text-align: center;"><a href="<?php echo $articleUrl; ?>" class="<?php echo htmlspecialchars($linkClass, ENT_QUOTES, 'UTF-8'); ?>">
             <?php echo htmlspecialchars($linkText, ENT_QUOTES, 'UTF-8'); ?>
-        </a>
+        </a></p>
     <?php endif; ?>
 </div>
 
