@@ -37,7 +37,7 @@ class ModLatestAdditionsHelper
         // Check if the article text is not empty
         if (!empty($articleFullText)) {
             // Split the article text by <hr /> to get individual additions
-            $additions = explode('<hr />', $articleFullText);
+            $additions = explode('<hr>', $articleFullText);
 
             // Reverse the array to start with the latest additions
             $additions = array_reverse($additions);
