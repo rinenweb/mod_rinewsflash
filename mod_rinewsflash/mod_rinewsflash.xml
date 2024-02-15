@@ -39,5 +39,8 @@
             </fieldset>
         </fields>
     </config>
+	<updateservers>
+	<server type="extension" name="RiNewsflash module updates">https://raw.githubusercontent.com/rinenweb/mod_rinewsflash/main/manifest.xml</server>
+	</updateservers>
 </extension>
 
