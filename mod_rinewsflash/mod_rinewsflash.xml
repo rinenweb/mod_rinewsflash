@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="4.0" client="site" method="upgrade">
     <name>MOD_RINEWSFLASH</name>
-    <creationDate>2024-02-12</creationDate>
+    <creationDate>2024-02-15</creationDate>
     <author>Rinenweb</author>
-    <license>GPL License v2</license>
+    <license>GPL License v3</license>
 	<authorEmail>info@rinenweb.eu</authorEmail>
 	<authorUrl>https://www.rinenweb.eu</authorUrl>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <description>MOD_RINEWSFLASH_XML_DESCRIPTION</description>
     <files>
         <filename module="mod_rinewsflash">mod_rinewsflash.php</filename>
