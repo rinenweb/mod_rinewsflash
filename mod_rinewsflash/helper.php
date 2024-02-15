@@ -4,7 +4,7 @@
  * @subpackage Mod_RiNewsflash
  * @author Rinenweb <info@rinenweb.eu>
  * @link https://www.rinenweb.eu
- * @license GNU General Public License v2
+ * @license GNU General Public License v3
  */
 // No direct access to this file
 defined('_JEXEC') or die;
@@ -49,8 +49,9 @@ class ModLatestAdditionsHelper
         // Now $article->text contains the processed content
         $processedContent = $article->text;
 
-        // Split the processed content by <hr /> to get individual additions
-        $additions = explode('<hr />', $processedContent);
+        // Use preg_split with a regex to split the content by <hr> or <hr />
+        $pattern = '/<hr\s*\/?>/i'; // This pattern matches both <hr> and <hr />, case-insensitive
+        $additions = preg_split($pattern, $processedContent);
 
         if ($order == 'desc') {
         // Reverse the array to start with the latest additions
