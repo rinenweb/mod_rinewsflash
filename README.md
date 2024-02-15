@@ -17,7 +17,7 @@ RiNewsflash module will (hopefully) play nice with:
 ## Configuration and Usage
 The module offers straightforward settings for easy customization:
 - [x] **Article ID:** The unique identifier of the source article. Specify the ID of the article from which to display the latest text additions.
-- [x] **Number of Additions:** How many latest updates to show within the module. **Please note that each update is separated by the previous one with a horizontal rule <hr /> HTML tag.**  
+- [x] **Number of Additions:** How many latest updates to show within the module. **Please note that each update is separated by the previous one with a horizontal rule HTML tag < hr >.**  
 - [x] **Data Order:** Select how the article's content will be proccessed. If you select **ascending** order, article content will be read from top to bottom.
 - [x] **Show Link:** Toggle to display a link to the full article.
 - [x] **Link Text:** Customizable text for the article link.
