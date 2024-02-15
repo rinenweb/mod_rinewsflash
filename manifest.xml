@@ -5,11 +5,11 @@
 		<description>RiNewsflash Module - This module is used for displaying brief news from an article of your choice.</description>
 		<element>mod_rinewsflash</element>
 		<type>module</type>
-		<version>1.0</version>
+		<version>1.0.1</version>
 		<client>site</client>
-		<infourl title="Diavgeia Module">https://github.com/rinenweb/mod_rinewsflash/releases/tag/v1.0</infourl>
+		<infourl title="Diavgeia Module">https://github.com/rinenweb/mod_rinewsflash/releases/tag/v1.0.1</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/rinenweb/mod_rinewsflash/releases/download/v1.0/mod_rinewsflash.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/rinenweb/mod_rinewsflash/releases/download/v1.0.1/mod_rinewsflash.zip</downloadurl>
 		</downloads>
 		<targetplatform name="joomla" version="(3\.([89]|10)|4\.[01234]|5\.0)" />
 	</update>
