@@ -17,9 +17,13 @@ $order = $params->get('order', 'desc');
 $showLink = $params->get('show_link', 0);
 $linkClass = $params->get('link_class', 'btn');
 $linkText = $params->get('link_text', 'More updates');
-
+$layout = $params->get('layout', 'default');
+$layout = preg_replace('/[^A-Z0-9_\.\-]/i', '', $layout);
 
 $list = ModLatestAdditionsHelper::getLatestAdditions($articleId, $numberOfAdditions, $order);
 
-require JModuleHelper::getLayoutPath('mod_rinewsflash');
-
+if (class_exists('Joomla\\CMS\\Helper\\ModuleHelper')) {
+    require \Joomla\CMS\Helper\ModuleHelper::getLayoutPath('mod_rinewsflash', $layout);
+} else {
+    require JModuleHelper::getLayoutPath('mod_rinewsflash', $layout);
+}
