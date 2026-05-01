@@ -12,6 +12,7 @@ RiNewsflash module will (hopefully) play nice with:
 - [x] Joomla 3.X
 - [x] Joomla 4.X
 - [X] Joomla 5.X
+- [X] Joomla 6.X
 - [x] PHP 7.4+
 - [x] PHP 8.0+
 
