@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="4.0" client="site" method="upgrade">
     <name>MOD_RINEWSFLASH</name>
-    <creationDate>2026-05-01</creationDate>
+    <creationDate>2026-10-19</creationDate>
     <author>Rinenweb</author>
-    <license>GPL License v3</license>
-	<authorEmail>info@rinenweb.eu</authorEmail>
-	<authorUrl>https://www.rinenweb.eu</authorUrl>
-    <version>1.0.2</version>
+    <license>GNU General Public License v3</license>
+    <authorEmail>info@rinenweb.eu</authorEmail>
+    <authorUrl>https://www.rinenweb.eu</authorUrl>
+    <version>1.1.0</version>
     <description>MOD_RINEWSFLASH_XML_DESCRIPTION</description>
     <files>
         <filename module="mod_rinewsflash">mod_rinewsflash.php</filename>
-        <filename>tmpl/default.php</filename>
         <filename>helper.php</filename>
         <folder>tmpl</folder>
         <folder>language</folder>
@@ -19,28 +18,52 @@
         <language tag="en-GB">en-GB/mod_rinewsflash.ini</language>
         <language tag="en-GB">en-GB/mod_rinewsflash.sys.ini</language>
         <language tag="el-GR">el-GR/mod_rinewsflash.ini</language>
-		<language tag="el-GR">el-GR/mod_rinewsflash.sys.ini</language>
+        <language tag="el-GR">el-GR/mod_rinewsflash.sys.ini</language>
     </languages>
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="article_id" type="text" default="" label="MOD_RINEWSFLASH_ARTICLE_ID" description="MOD_RINEWSFLASH_ARTICLE_ID_DESC" />
-                <field name="number_of_additions" type="number" default="5" label="MOD_RINEWSFLASH_NUMBER_OF_ADDITIONS" description="MOD_RINEWSFLASH_NUMBER_OF_ADDITIONS_DESC" min="1" step="1" />
-				<field name="order" type="list" default="desc" label="MOD_RINEWSFLASH_ORDER_LABEL" description="MOD_RINEWSFLASH_ORDER_LABEL_DESC">
-				<option value="desc">MOD_RINEWSFLASH_ORDER_DESCENDING</option>
-				<option value="asc">MOD_RINEWSFLASH_ORDER_ASCENDING</option>
-				</field>
+                <!-- addfieldpath: Joomla 3 location of the article picker; addfieldprefix: Joomla 4/5/6 -->
+                <field
+                    name="article_id"
+                    type="modal_article"
+                    addfieldpath="/administrator/components/com_content/models/fields"
+                    addfieldprefix="Joomla\Component\Content\Administrator\Field"
+                    label="MOD_RINEWSFLASH_ARTICLE_ID"
+                    description="MOD_RINEWSFLASH_ARTICLE_ID_DESC"
+                    select="true"
+                    new="false"
+                    edit="false"
+                    clear="true"
+                    filter="integer"
+                />
+                <field name="number_of_additions" type="number" default="5" label="MOD_RINEWSFLASH_NUMBER_OF_ADDITIONS" description="MOD_RINEWSFLASH_NUMBER_OF_ADDITIONS_DESC" min="1" step="1" filter="integer" />
+                <field name="order" type="list" default="desc" label="MOD_RINEWSFLASH_ORDER_LABEL" description="MOD_RINEWSFLASH_ORDER_LABEL_DESC">
+                    <option value="desc">MOD_RINEWSFLASH_ORDER_DESCENDING</option>
+                    <option value="asc">MOD_RINEWSFLASH_ORDER_ASCENDING</option>
+                </field>
                 <field name="show_link" type="radio" default="0" label="MOD_RINEWSFLASH_SHOW_LINK" description="MOD_RINEWSFLASH_SHOW_LINK_DESC" class="btn-group btn-group-yesno">
-                <option value="0">JNO</option>
-                <option value="1">JYES</option>
-            </field>
-            <field name="link_class" type="text" default="btn" label="MOD_RINEWSFLASH_LINK_CLASS" description="MOD_RINEWSFLASH_LINK_CLASS_DESC" showon="show_link:1" />
-            <field name="link_text" type="text" default="More updates" label="MOD_RINEWSFLASH_LINK_TEXT" description="MOD_RINEWSFLASH_LINK_TEXT_DESC" showon="show_link:1" />
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="link_class" type="text" default="btn" label="MOD_RINEWSFLASH_LINK_CLASS" description="MOD_RINEWSFLASH_LINK_CLASS_DESC" showon="show_link:1" />
+                <field name="link_text" type="text" default="" hint="MOD_RINEWSFLASH_LINK_TEXT_DEFAULT" label="MOD_RINEWSFLASH_LINK_TEXT" description="MOD_RINEWSFLASH_LINK_TEXT_DESC" showon="show_link:1" />
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field name="cache_time" type="number" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" filter="integer" />
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"></option>
+                </field>
             </fieldset>
         </fields>
     </config>
-	<updateservers>
-	<server type="extension" name="RiNewsflash module updates">https://raw.githubusercontent.com/rinenweb/mod_rinewsflash/main/manifest.xml</server>
-	</updateservers>
+    <updateservers>
+        <server type="extension" name="RiNewsflash module updates">https://raw.githubusercontent.com/rinenweb/mod_rinewsflash/main/manifest.xml</server>
+    </updateservers>
 </extension>
-
