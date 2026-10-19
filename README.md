@@ -9,7 +9,7 @@ The RiNewsflash Module is a dynamic Joomla extension designed to enhance your we
 
 ## Requirements
 RiNewsflash module will (hopefully) play nice with:
-- [x] Joomla 3.X
+- [x] Joomla 3.8+
 - [x] Joomla 4.X
 - [X] Joomla 5.X
 - [X] Joomla 6.X
